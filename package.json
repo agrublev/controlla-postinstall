@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Lightweight npm postinstall message",
   "license": "MIT",
-  "author": "",
+  "author": "Ivan Sotelo <isotelo@controlla.com.mx>",
   "main": "src/index.js",
   "bin": "src/index.js",
   "scripts": {
+    "release": "npm version patch && npm publish",
     "test": "jest"
   },
   "devDependencies": {
