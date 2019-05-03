@@ -1,0 +1,26 @@
+{
+  "name": "@controlla/postinstall",
+  "version": "1.0.0",
+  "description": "Lightweight npm postinstall message",
+  "license": "MIT",
+  "author": "",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^24.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Controlla/controlla-postinstall.git"
+  },
+  "keywords": [
+    "postinstall"
+  ],
+  "bugs": {
+    "url": "https://github.com/Controlla/controlla-postinstall/issues"
+  },
+  "homepage": "https://github.com/Controlla/controlla-postinstall#readme"
+}
