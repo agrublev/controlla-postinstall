@@ -20,21 +20,18 @@ describe('test all the things', () => {
     it('when called without args', () =>{
       expect(global.console.log).not.toHaveBeenCalled();
       require('../src/index');
-      expect(global.console.log).toHaveBeenCalledTimes(3);
+      expect(global.console.log).toHaveBeenCalledTimes(2);
       expect(global.console.log).toHaveBeenNthCalledWith(1,
         `\u001b[96m\u001b[1mThank you for using testpkg2!\u001b[96m\u001b[1m`
-      );
-      expect(global.console.log).toHaveBeenNthCalledWith(3,
-        `> \u001b[94mtesturl/donate\u001b[0m\n`
       );
     });
 
     [0, false].forEach(falsy => {
       it(`when Disable is set to ${falsy}`, () => {
-        global.process.env = {DISABLE_OPENCOLLECTIVE: falsy};
+        global.process.env = {DISABLE_CONTROLLA: falsy};
         expect(global.console.log).not.toHaveBeenCalled();
         require('../src/index');
-        expect(global.console.log).toHaveBeenCalledTimes(3);
+        expect(global.console.log).toHaveBeenCalledTimes(2);
       });
     });
 
@@ -43,7 +40,7 @@ describe('test all the things', () => {
         global.process.env = {npm_config_loglevel: log}
         expect(global.console.log).not.toHaveBeenCalled();
         require('../src/index');
-        expect(global.console.log).toHaveBeenCalledTimes(3);
+        expect(global.console.log).toHaveBeenCalledTimes(2);
       });
     });
   });
@@ -51,7 +48,7 @@ describe('test all the things', () => {
   describe('does not show output', () => {
     [1, true].forEach(truthy => {
       it(`when Disable is set to ${truthy}`, () => {
-        global.process.env = {DISABLE_OPENCOLLECTIVE: truthy};
+        global.process.env = {DISABLE_CONTROLLA: truthy};
         expect(global.console.log).not.toHaveBeenCalled();
         require('../src/index');
         expect(global.console.log).not.toHaveBeenCalled();
