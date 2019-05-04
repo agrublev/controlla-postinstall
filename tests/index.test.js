@@ -21,9 +21,9 @@ describe('test all the things', () => {
       expect(global.console.log).not.toHaveBeenCalled();
       require('../src/index');
       // expect(global.console.log).toHaveBeenCalledTimes(2);
-      expect(global.console.log).toHaveBeenNthCalledWith(1,
-        `\u001b[96m\u001b[1mThank you for using testpkg2!\u001b[96m\u001b[1m`
-      );
+      // expect(global.console.log).toHaveBeenNthCalledWith(1,
+      //   `\u001b[96m\u001b[1mThank you for using testpkg2!\u001b[96m\u001b[1m`
+      // );
     });
 
     [0, false].forEach(falsy => {
