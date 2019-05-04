@@ -8,6 +8,7 @@
   "bin": "src/index.js",
   "scripts": {
     "release": "npm version patch && npm publish --access=public && git push",
+    "test": "jest"
   },
   "devDependencies": {
     "jest": "^24.0.0"
