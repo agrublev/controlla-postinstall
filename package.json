@@ -7,7 +7,8 @@
   "main": "src/index.js",
   "bin": "src/index.js",
   "scripts": {
-    "release": "npm version patch && npm publish",
+    "release": "npm version patch && npm publish && npm run git-push",
+    "git-push": "git add . && git commit -m 'Deploy :fire:' && git push",
     "test": "jest"
   },
   "devDependencies": {
