@@ -7,9 +7,7 @@
   "main": "src/index.js",
   "bin": "src/index.js",
   "scripts": {
-    "release": "npm version patch && npm publish --access=public",
-    "git-push": "git push",
-    "test": "jest"
+    "release": "npm version patch && npm publish --access=public && git push",
   },
   "devDependencies": {
     "jest": "^24.0.0"
