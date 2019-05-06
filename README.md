@@ -5,7 +5,7 @@ Lightweight npm postinstall message
 ## Installation
 
 ```
-npm install --save controlla-postinstall
+npm install --save @controlla/postinstall
 ```
 
 And in your `package.json` add:
@@ -14,7 +14,7 @@ And in your `package.json` add:
 {
   ...
   "scripts": {
-    "postinstall": "controlla-postinstall || exit 0"
+    "postinstall": "@controlla/postinstall || exit 0"
   },
   "controlla": {
     "url": "https://controlla.github.io/vuemerang/"
