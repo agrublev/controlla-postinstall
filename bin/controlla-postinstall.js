@@ -1,3 +1,6 @@
 #!/usr/bin/env node
 
-require('../src/index.js')
+require('../dist/postinstall.cjs')
+  .init(process.argv.length > 2 ? process.argv[2] : '.')
+  .then(() => process.exit(0))
+  .catch(() => process.exit(1))

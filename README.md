@@ -14,7 +14,7 @@ And in your `package.json` add:
 {
   ...
   "scripts": {
-    "postinstall": "@controlla/postinstall || exit 0"
+    "postinstall": "controlla-postinstall || exit 0"
   },
   "controlla": {
     "url": "https://controlla.github.io/vuemerang/"
