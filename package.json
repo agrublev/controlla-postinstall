@@ -4,7 +4,7 @@
   "description": "Lightweight npm postinstall message",
   "license": "MIT",
   "author": "Ivan Sotelo <isotelo@controlla.com.mx>",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "bin": "bin/controlla-postinstall.js",
   "scripts": {
     "build": "bili -t node --format cjs src/index.js",
