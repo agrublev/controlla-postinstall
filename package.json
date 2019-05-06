@@ -4,8 +4,8 @@
   "description": "Lightweight npm postinstall message",
   "license": "MIT",
   "author": "Ivan Sotelo <isotelo@controlla.com.mx>",
-  "main": "src/index.js",
-  "bin": "src/index.js",
+  "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "release": "npm version patch && npm publish --access=public && git push",
     "test": "jest"
@@ -22,6 +22,9 @@
   ],
   "bugs": {
     "url": "https://github.com/Controlla/controlla-postinstall/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "homepage": "https://github.com/Controlla/controlla-postinstall#readme",
   "dependencies": {

@@ -19,7 +19,7 @@ describe('test all the things', () => {
   describe('outputs the correct values', () => {
     it('when called without args', () =>{
       expect(global.console.log).not.toHaveBeenCalled();
-      require('../src/index');
+      require('../index');
       // expect(global.console.log).toHaveBeenCalledTimes(2);
       // expect(global.console.log).toHaveBeenNthCalledWith(1,
       //   `\u001b[96m\u001b[1mThank you for using testpkg2!\u001b[96m\u001b[1m`
@@ -30,7 +30,7 @@ describe('test all the things', () => {
       it(`when Disable is set to ${falsy}`, () => {
         global.process.env = {DISABLE_CONTROLLA: falsy};
         expect(global.console.log).not.toHaveBeenCalled();
-        require('../src/index');
+        require('../index');
         expect(global.console.log).toHaveBeenCalledTimes(2);
       });
     });
@@ -39,7 +39,7 @@ describe('test all the things', () => {
       it(`when config_loglevel is set to ${log}`, () => {
         global.process.env = {npm_config_loglevel: log}
         expect(global.console.log).not.toHaveBeenCalled();
-        require('../src/index');
+        require('../index');
         expect(global.console.log).toHaveBeenCalledTimes(2);
       });
     });
@@ -50,7 +50,7 @@ describe('test all the things', () => {
       it(`when Disable is set to ${truthy}`, () => {
         global.process.env = {DISABLE_CONTROLLA: truthy};
         expect(global.console.log).not.toHaveBeenCalled();
-        require('../src/index');
+        require('../index');
         expect(global.console.log).not.toHaveBeenCalled();
       });
     });
@@ -58,7 +58,7 @@ describe('test all the things', () => {
     ['warn', 'error', 'silent'].forEach(log => {
       it(`when npm_config_loglevel is set to ${log}`, () => {
         global.process.env = {npm_config_loglevel: log}
-        require('../src/index');
+        require('../index');
         expect(global.console.log).not.toHaveBeenCalled();
       });
     });

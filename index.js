@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 const { printData } = require('./utils/print')
 
-// const controllaLogoUrl = pkg => pkg.controlla.logo || pkg.controlla.logoUrl || ''
-
 function isTrue(value) {
   return !!value && value !== "0" && value !== "false"
 }
