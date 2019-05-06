@@ -75,14 +75,5 @@
       "pre-commit": "npm run lint",
       "commit-msg": "npm run commitlint"
     }
-  },
-  "controlla": {
-    "url": "https://opencollective.com/fake",
-    "logoUrl": "https://controlla.com.mx/logo.txt",
-    "donation": {
-      "slug": "/order/591",
-      "amount": "50",
-      "text": "Please donate:"
-    }
   }
 }
