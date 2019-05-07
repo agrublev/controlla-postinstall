@@ -1,6 +1,6 @@
 {
   "name": "@controlla/controlla-postinstall",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Lightweight npm postinstall message",
   "license": "MIT",
   "author": "Ivan Sotelo <isotelo@controlla.com.mx>",

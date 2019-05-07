@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.21"></a>
+## [1.0.21](https://github.com/Controlla/controlla-postinstall/compare/v1.0.20...v1.0.21) (2019-05-07)
+
+
+### Bug Fixes
+
+* url y name ([9b1758a](https://github.com/Controlla/controlla-postinstall/commit/9b1758a))
+
+
+
 <a name="1.0.20"></a>
 ## [1.0.20](https://github.com/Controlla/controlla-postinstall/compare/v1.0.19...v1.0.20) (2019-05-07)
 
