@@ -1,5 +1,5 @@
-import { reportAndThrowError, stripLeadingSlash, stripTrailingSlash } from './misc'
-import { fetchLogo, fetchPkg, fetchStats } from './fetch'
+import { reportAndThrowError, stripLeadingSlash } from './misc'
+import { fetchLogo, fetchPkg } from './fetch'
 
 export const controllaSlugFromUrl = url => url.substr(url.lastIndexOf('/') + 1).toLowerCase().replace(/\.json/g, '')
 
@@ -10,7 +10,7 @@ export const controllaUrl = pkg => {
     reportAndThrowError('No controlla URL set!')
   }
 
-  return stripTrailingSlash(url)
+  return url
 }
 
 // use pkg.controlla.logo for "legacy"/compatibility reasons
@@ -23,26 +23,25 @@ export const getControlla = async pkgPath => {
   const url = controllaUrl(pkg)
   const baseControlla = {
     url,
-    slug: controllaSlugFromUrl(url),
+    slug: pkg.name,
     logoUrl: controllaLogoUrl(pkg),
     donationUrl: controllaDonationUrl(pkg),
     donationText: controllaDonationText(pkg)
   }
   const logoUrl = baseControlla.logoUrl
-  const promises = [fetchStats(url)].concat(logoUrl ? fetchLogo(logoUrl) : [])
 
-  const [stats, logo] = await Promise.all(promises)
+  const logo = await fetchLogo(logoUrl)
 
-  return Object.assign(baseControlla, { stats, logo })
+  return Object.assign(baseControlla, { logo })
 }
 
 export const controllaDonationUrl = pkg => {
   const defaultDonationAmount = pkg.controlla.donation && pkg.controlla.donation.amount
 
-  let donateUrl = `${controllaUrl(pkg)}/${retrieveDonationSlug(pkg)}`
+  let donateUrl = `${controllaUrl(pkg)}/`
 
   if (defaultDonationAmount) {
-    return `${donateUrl}/${defaultDonationAmount}`
+    return `${donateUrl}${defaultDonationAmount}`
   }
 
   return donateUrl

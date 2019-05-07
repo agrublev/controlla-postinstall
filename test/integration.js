@@ -5,7 +5,6 @@ import fetchMock from 'fetch-mock'
 import { promisify } from 'util'
 import { init } from '../src/init'
 import fetch from 'node-fetch'
-import { formatMoney } from '../src/utils/misc'
 import pkgJsonFull from './fixtures/package-full/package'
 import { retrieveCols } from '../src/utils/print'
 
@@ -13,7 +12,7 @@ const logo = 'You are beautiful!'
 const stats = {
   slug: 'nuxtjs',
   currency: 'USD',
-  image: 'https://opencollective-production.s3-us-west-1.amazonaws.com/251e1a10-369b-11e7-8ad6-5967d7493bb7.png',
+  image: 'https://opencontrolla-production.s3-us-west-1.amazonaws.com/251e1a10-369b-11e7-8ad6-5967d7493bb7.png',
   balance: 435949,
   yearlyIncome: 2528815,
   backersCount: 110,
@@ -23,8 +22,8 @@ const stats = {
 test.before(t => {
   // Assign as the assignment in init happens after mocking
   global.fetch = fetch
-  fetchMock.mock('https://opencollective.com/fake.json', stats)
-  fetchMock.mock('https://opencollective.com/fake/logo.txt?reverse=true&variant=variant2', {
+  fetchMock.mock('https://opencontrolla.com/fake.json', stats)
+  fetchMock.mock('https://opencontrolla.com/fake/logo.txt?reverse=true&variant=variant2', {
     body: logo,
     headers: { 'content-type': 'text/plain' }
   })
@@ -35,10 +34,10 @@ test.beforeEach(t => {
 })
 
 test.serial('it prints everything', async t => {
-  const formatInCurrency = formatMoney(stats.currency)
+  // const formatInCurrency = formatMoney(stats.currency)
 
-  const pkgCollective = pkgJsonFull.collective
-  const url = pkgCollective.url + pkgCollective.donation.slug + '/' + pkgCollective.donation.amount
+  const pkgControlla = pkgJsonFull.controlla
+  const url = pkgControlla.url + '/' + pkgControlla.donation.amount
 
   const cols = retrieveCols()
   const printedSpaces = ' '.repeat(cols / 2)
@@ -52,16 +51,11 @@ test.serial('it prints everything', async t => {
   await init(pkgPath, false)
 
   const content = [
-    logo,
     printedSpaces,
-    'Thanks for installing fake 🙏',
-    'Please consider donating to our open collective',
+    'Thanks for installing package-with-postinstall 🙏',
+    'Please consider donating to our open controlla',
     'to help us maintain this package.',
-    `Number of contributors: ${stats.contributorsCount}`,
-    `Number of backers: ${stats.backersCount}`,
-    `Annual budget: ${formatInCurrency(stats.yearlyIncome)}`,
-    `Current balance: ${formatInCurrency(stats.balance)}`,
-    pkgCollective.donation.text,
+    pkgControlla.donation.text,
     url
   ]
 
@@ -86,8 +80,8 @@ test.serial('yarn postinstall script works as expected', async t => {
   const stdout = rawStdout.toString('utf8')
 
   const content = [
-    'Thanks for installing fake',
-    'Please consider donating to our open collective',
+    'Thanks for installing package-with-postinstall',
+    'Please consider donating to our open controlla',
     'to help us maintain this package.'
   ]
 
