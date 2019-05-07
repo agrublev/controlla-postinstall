@@ -5,7 +5,9 @@
   "license": "MIT",
   "author": "Ivan Sotelo <isotelo@controlla.com.mx>",
   "main": "dist/index.js",
-  "bin": "bin/controlla-postinstall.js",
+  "bin": {
+    "controlla-postinstall": "bin/controlla-postinstall.js"
+  },
   "scripts": {
     "build": "bili -t node --format cjs src/index.js",
     "lint": "eslint src test",
