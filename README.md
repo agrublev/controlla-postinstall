@@ -1,4 +1,5 @@
 # Controlla postinstall
+[![Build Status](https://travis-ci.org/Controlla/controlla-postinstall.svg?branch=master)](https://travis-ci.org/Controlla/controlla-postinstall)
 
 Lightweight npm postinstall message
 
