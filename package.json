@@ -1,5 +1,5 @@
 {
-  "name": "@controlla/postinstall",
+  "name": "@controlla/controlla-postinstall",
   "version": "1.0.15",
   "description": "Lightweight npm postinstall message",
   "license": "MIT",
