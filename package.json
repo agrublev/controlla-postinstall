@@ -1,6 +1,6 @@
 {
-  "name": "@controlla/controlla-postinstall",
-  "version": "1.0.21",
+  "name": "fkit-postinstall",
+  "version": "1.0.1",
   "description": "Lightweight npm postinstall message",
   "license": "MIT",
   "author": "Ivan Sotelo <isotelo@controlla.com.mx>",
@@ -57,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Controlla/controlla-postinstall.git"
+    "url": "git+https://github.com/agrublev/controlla-postinstall.git"
   },
   "keywords": [
     "postinstall"
